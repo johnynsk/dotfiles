@@ -1,0 +1,7 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_1='/home/johny/.conf'
+let g:netrw_dirhist_2='/home/johny'
+let g:netrw_dirhist_3='/home/johny/.composer'
+let g:netrw_dirhist_4='/home/johny'
+let g:netrw_dirhist_5='/data/projects/weather.ngs.ru/weather-widget'
