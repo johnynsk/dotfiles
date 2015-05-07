@@ -6,8 +6,6 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
-Bundle 'pdv'
-
 Plugin 'ultisnips'
 
 " Snippets are separated from the engine. Add this if you want them:
