@@ -81,3 +81,5 @@ autocmd	FileType	php	set	omnifunc=phpcomplete#CompletePHP
 set completeopt=longest,menuone
 set ofu=syntaxcomplete#Complete
 
+highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+match OverLength /\%121v.\+/

@@ -1,0 +1,4 @@
+*.swp
+*.swo
+framework/
+.config/jirabranch

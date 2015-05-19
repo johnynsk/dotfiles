@@ -1,16 +1,20 @@
 [alias]
-	sh = !/usr/local/bin/git-sh
-	edit = !/usr/lib/git-core//git-edit
-	forest = !/usr/lib/git-core//git-forest
-        st = status
+    sh = !/usr/local/bin/git-sh
+    edit = !/usr/lib/git-core//git-edit
+    forest = !/usr/lib/git-core//git-forest
+    st = status
     pl = pull --rebase origin
-	fo = fetch origin
+    fo = fetch origin
     ph = push origin
     co = checkout
     ro = rebase origin/master
 
 [color]
-	ui = auto
+    ui = auto
+
 [user]
-	name = Evgeniy Vasilev
-	email = e.vasilev@office.ngs.ru
+    name = Evgeniy Vasilev
+    email = e.vasilev@office.ngs.ru
+
+[core]
+	excludesfile = ~/.config/git/gitignore
