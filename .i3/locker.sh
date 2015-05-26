@@ -7,5 +7,11 @@ scrot $RAW
 
 convert $RAW -scale $DIR% -scale $BACK% -blur 5x1 $FILE
 i3lock -i $FILE &
-sleep 5m
+COUNTER=0
+until [ $COUNTER -gt 300 ];
+do
+    sleep 1s
+    let COUNTER+=1
+    pgrep i3lock || exit
+done
 pgrep i3lock && xset dpms force off
