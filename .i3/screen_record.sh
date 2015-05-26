@@ -1,14 +1,22 @@
 #!/bin/bash
 
 # Delay before starting
-DELAY=5
+DELAY=3
 
 # Sound notification to let one know when recording is about to start (and ends)
 beep() {
     paplay /usr/share/sounds/KDE-Im-Irc-Event.ogg &
 }
 
-FILE=~/shots/`date +%Y-%m-%d_%H-%M-%S`_byanz.gif
+FILE=~/shots/`date +%Y-%m-%d_%H-%M-%S`_byanz
+
+if [ -n "$1" ]
+then
+    FILE=$FILE.flv
+else
+    FILE=$FILE.gif
+fi;
+
 DURATION=`zenity --entry --title='Запись gif' --text='Введите время записи (сек)' 2>/dev/null`
 echo Recording duration $DURATION s to $FILE
 
@@ -23,3 +31,5 @@ done
 beep
 byzanz-record --verbose --delay=0 ${ARGUMENTS} --duration=$DURATION $FILE
 beep
+echo $FILE | xsel -i -b
+
