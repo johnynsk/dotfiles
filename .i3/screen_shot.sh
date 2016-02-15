@@ -8,5 +8,3 @@ scrot $FILE
 convert $FILE -crop $SIZE $FILE
 xclip
 echo $FILE | xsel -i -b
-#DURATION=`zenity --info --title='Расположение скриншота' --text="$FILE\n$SIZE" 2>/dev/null`
-

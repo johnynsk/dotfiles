@@ -17,4 +17,4 @@
     email = e.vasilev@office.ngs.ru
 
 [core]
-	excludesfile = ~/.config/git/gitignore
+    excludesfile = /home/johny/.config/git/gitignore

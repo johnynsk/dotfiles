@@ -2,3 +2,4 @@
 *.swo
 framework/
 .config/jirabranch
+.idea
