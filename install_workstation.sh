@@ -31,6 +31,7 @@ LINKPATHS=(
     ".i3"
     ".config/git"
     ".config/jirabranch"
+    ".keynavrc"
 )
 
 INITPATHS=(
