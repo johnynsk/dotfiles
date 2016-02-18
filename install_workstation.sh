@@ -29,6 +29,8 @@ LINKPATHS=(
     ".vim"
     ".vimrc"
     ".i3"
+    ".config/git"
+    ".config/jirabranch"
 )
 
 INITPATHS=(

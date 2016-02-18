@@ -1,9 +1,10 @@
+#!/bin/bash
 DIR=`pwd`
-ln -s $DIR/.vim ~/.vim
-ln -s $DIR/.config ~/.config
-ln -s $DIR/.vimrc ~/.vimrc
-ln -s $DIR/.zshrc ~/.zshrc
-ln -s $DIR/.gitconfig ~/.gitconfig
+ln -s ${DIR}/.vim ~/.vim
+ln -s ${DIR}/.config ~/.config
+ln -s ${DIR}/.vimrc ~/.vimrc
+ln -s ${DIR}/.zshrc ~/.zshrc
+ln -s ${DIR}/.gitconfig ~/.gitconfig
 
 echo "Настраиваю vim"
 mkdir ~/.vim/bundle
