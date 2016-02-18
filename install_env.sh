@@ -1,15 +1,29 @@
 #!/bin/bash
-DIR=`pwd`
-ln -s ${DIR}/.vim ~/.vim
-ln -s ${DIR}/.config ~/.config
-ln -s ${DIR}/.vimrc ~/.vimrc
-ln -s ${DIR}/.zshrc ~/.zshrc
-ln -s ${DIR}/.gitconfig ~/.gitconfig
+# Среда разработки
+DIR=${0%/*}
+source functions.sh
 
-echo "Настраиваю vim"
-mkdir ~/.vim/bundle
-git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-git clone https://github.com/vim-scripts/ultisnips.git ~/.vim/bundle/utilsnips
+LINKPATHS=(
+    ".gitconfig"
+    ".vim"
+    ".vimrc"
+    ".config/git"
+    ".config/jirabranch"
+)
 
-echo "Настраиваю git"
-git config --global core.excludesfile '~/.config/git/gitignore'
+EXECPATHS=(
+    "git.sh"
+    "vim.sh"
+)
+
+for PATHTO in "${LINKPATHS[@]}"
+do
+    log "linking ${PATHTO}:"
+    link ${PATHTO}
+done
+
+for PATHTO in "${EXECPATHS[@]}"
+do
+    log "executing ${PATHTO}"
+    exec "init/${PATHTO}"
+done
