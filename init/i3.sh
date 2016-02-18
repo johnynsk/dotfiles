@@ -1,2 +1,2 @@
 #!/bin/bash
-sudo apt-get -y install i3 xclip xsel scrot imagemagick feh
+sudo apt-get -y install i3 imagemagick feh
