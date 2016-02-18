@@ -2,6 +2,7 @@
 # Установка xrectsel
 
 pushd `pwd`
+sudo apt-get -y install libx11-dev autoconf
 rm -rf /tmp/xrectsel
 
 git clone https://github.com/lolilolicon/xrectsel /tmp/xrectsel
@@ -9,8 +10,8 @@ cd /tmp/xrectsel
 
 # установка
 ./bootstrap
-make
-sudo make DESTDIR=`/usr/bin/` install
+./configure --prefix /usr
+sudo checkinstall
 
 # прибираемся
 cd `popd`
