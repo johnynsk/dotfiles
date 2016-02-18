@@ -1,0 +1,3 @@
+exec feh --bg-fill 411460075.jpg &
+exec keynav &
+exec guake &

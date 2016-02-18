@@ -11,6 +11,7 @@ LINKPATHS=(
     ".config/git"
     ".config/jirabranch"
     ".keynavrc"
+    ".xsessionrc"
 )
 
 EXECPATHS=(
