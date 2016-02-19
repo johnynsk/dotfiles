@@ -2,7 +2,7 @@
 # Установка xrectsel
 
 pushd `pwd`
-sudo apt-get -y install libx11-dev autoconf xclip xsel scrot zenity
+sudo apt-get -y install xclip xsel scrot zenity
 rm -rf /tmp/xrectsel
 
 git clone https://github.com/lolilolicon/xrectsel /tmp/xrectsel

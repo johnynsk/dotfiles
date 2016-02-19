@@ -15,6 +15,7 @@ LINKPATHS=(
 )
 
 EXECPATHS=(
+    "git.sh"
     "apt.sh"
     "vim.sh"
     "screen-record.sh"
@@ -31,5 +32,5 @@ done
 for PATHTO in "${EXECPATHS[@]}"
 do
     log "executing ${PATHTO}"
-    exec "init/${PATHTO}"
+    ./init/${PATHTO}
 done

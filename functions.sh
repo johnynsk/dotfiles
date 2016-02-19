@@ -1,4 +1,6 @@
 #!/bin/bash
+DIR=`pwd`
+
 function log {
     if [ -n "$2" ]
     then
@@ -19,7 +21,7 @@ function link {
         fi
         rm ~/$1
     fi
-    /bin/ln -sf ${DIR}$1 ~/$1
+    /bin/ln -sf ${DIR}/$1 ~/$1
 }
 
 export -f log
