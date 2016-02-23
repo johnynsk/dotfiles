@@ -12,5 +12,6 @@ sudo apt-get -y install \
     gcc \
     make \
     libx11-dev \
-    autoconf
+    autoconf \
+    php5-memcached
 
