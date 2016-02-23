@@ -1,20 +1,15 @@
 #!/bin/bash
-# Среда разработки
+
 DIR=${0%/*}
+
 source functions.sh
 
-LINKPATHS=(
-    ".gitconfig"
-    ".vim"
-    ".vimrc"
-    ".config/git"
-    ".config/jirabranch"
-)
-
-EXECPATHS=(
-    "git.sh"
-    "vim.sh"
-)
+if [[ "$1" =~ ^env || -n "${ENV_TYPE}" ]]
+then
+    source config/environment.sh
+else
+    source config/workstation.sh
+fi
 
 for PATHTO in "${LINKPATHS[@]}"
 do
@@ -25,5 +20,5 @@ done
 for PATHTO in "${EXECPATHS[@]}"
 do
     log "executing ${PATHTO}"
-    exec "init/${PATHTO}"
+    ./init/${PATHTO}
 done
