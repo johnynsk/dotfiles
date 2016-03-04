@@ -19,7 +19,7 @@ function link {
         then
             return
         fi
-        rm ~/$1
+        rm -rf ~/$1
     fi
     /bin/ln -sf ${DIR}/$1 ~/$1
 }
