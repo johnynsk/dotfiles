@@ -102,8 +102,13 @@ bindsym $mod+e layout toggle split
 # '%Y-%m-%d_%H-%M-%S_$wx$h_scrot.png'
 #bindsym Print exec "scrot ~/shots/%Y-%m-%d_%H-%M-%S_'$wx$h'_scrot.png -s"
 bindsym Print exec ~/.i3/screen_shot.sh
+bindsym Shift+Print exec ~/.i3/screen_shot.sh hosting
 bindsym $mod+Print exec ~/.i3/screen_record.sh
+bindsym $mod+Shift+Print exec ~/.i3/screen_record.sh hosting
 bindsym $mod+Ctrl+Print exec ~/.i3/screen_record.sh flv
+bindsym $mod+Shift+Ctrl+Print exec ~/.i3/screen_record.sh flv hosting
+
+bindsym $mod+Scroll_Lock exec ~/.i3/current_task.sh
 
 
 # toggle tiling / floating
@@ -117,7 +122,10 @@ bindsym $mod+Cyrillic_ef focus parent
 bindsym $mod+a focus parent
 
 # focus the child container
-#bindsym $mod+d focus child
+#bindsym $mod+p focus child
+#bindsym $mod+Cyrillic_ze focus child
+
+#bindsym $mod+p sticky enable
 
 # workspaces
 

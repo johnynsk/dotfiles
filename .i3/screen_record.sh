@@ -8,14 +8,25 @@ beep() {
     paplay /usr/share/sounds/KDE-Im-Irc-Event.ogg &
 }
 
-FILE=~/shots/`date +%Y-%m-%d_%H-%M-%S`_byanz
+FILENAME=`date +%Y-%m-%d_%H-%M-%S`_byanz
+REMOTE=
 
-if [ -n "$1" ]
+if [ "$1" = "flv" ]
 then
-    FILE=$FILE.flv
+    FILENAME=$FILENAME.flv
+    if [ "$2" = "hosting" ]
+    then
+        REMOTE=1
+    fi
 else
-    FILE=$FILE.gif
+    FILENAME=$FILENAME.gif
+    if [ "$1" = "hosting" ]
+    then
+        REMOTE=1
+    fi
 fi;
+
+FILE=~/shots/$FILENAME
 
 DURATION=`zenity --entry --title='Запись gif' --text='Введите время записи (сек)' 2>/dev/null`
 echo Recording duration $DURATION s to $FILE
@@ -31,5 +42,13 @@ done
 beep
 byzanz-record --verbose --delay=0 ${ARGUMENTS} --duration=$DURATION $FILE
 beep
-echo $FILE | xsel -i -b
+
+if [ -n "$REMOTE" ]
+then
+    scp $FILE johnynsk.ru:/var/www/johnynsk.ru/fastimg.johnynsk.ru/www/work/
+    REMOTEFILE='http://fastimg.johnynsk.ru/work/'$FILENAME
+    echo $REMOTEFILE | xsel -i -b
+else
+    echo $FILE | xsel -i -b
+fi
 
