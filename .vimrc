@@ -1,7 +1,5 @@
 execute pathogen#infect()
 
-source ~/.vim/php-doc.vim
-
 set nocompatible
 filetype off
 
@@ -47,11 +45,6 @@ nmap <UP> gk
 
 
 filetype plugin indent on
-
-autocmd FileType php inoremap <C-p> <ESC>:call PhpDocSingle()<CR>i
-autocmd FileType php nnoremap <C-p> :call PhpDocSingle()<CR>
-autocmd FileType php vnoremap <C-p> :call PhpDocRange()<CR> 
-autocmd	FileType php set omnifunc=phpcomplete#CompletePHP
 
 " -----------------------------------------
 " options
