@@ -16,6 +16,7 @@ Plugin 'ekalinin/Dockerfile.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'Valloric/YouCompleteMe'
 
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
@@ -72,7 +73,7 @@ let g:airline_theme='jellybeans'
 let g:airline#extensions#tabline#enabled = 1
 
 highlight LineNr ctermfg=darkgray ctermbg=black
-highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+highlight OverLength ctermfg=red guibg=#592929
 match OverLength /\%121v.\+/
 
 filetype plugin on
