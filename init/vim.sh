@@ -5,8 +5,10 @@ mkdir -p ~/.vim/autoload/
 curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 vim +PluginInstall +qall
 
-sudo apt-get install python-dev
-pushd `pwd`
-cd ~/.vim/bundle/YouCompleteMe
-./install.py --tern-completer --gocode-completer --clang-completer
-
+if [[ ! -e "`eval echo ~/.vim/bundle/YouCompleteMe/third_party/ycmd/ycm_core.so`" ]]
+then
+    sudo apt-get install python-dev
+    pushd `pwd`
+    cd ~/.vim/bundle/YouCompleteMe
+    ./install.py --tern-completer --gocode-completer --clang-completer
+fi
