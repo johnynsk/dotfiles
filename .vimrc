@@ -17,6 +17,7 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'airblade/vim-gitgutter'
 
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
@@ -28,7 +29,12 @@ call vundle#end()
 " -----------------------------------------
 " map keys
 " -----------------------------------------
-nnoremap <F4> :set nonumber!<CR>
+nnoremap <F4> :call ToggleLines()<CR>
+function ToggleLines()
+    :set nonumber!
+    :GitGutterSignsToggle
+endfunction
+
 nnoremap <F3> :call ToggleMouse()<CR>
 function! ToggleMouse()
 	if &mouse == 'a'
