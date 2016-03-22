@@ -18,6 +18,7 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'ntpeters/vim-better-whitespace'
 
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
@@ -83,3 +84,6 @@ highlight OverLength ctermfg=red guibg=#592929
 match OverLength /\%121v.\+/
 
 filetype plugin on
+
+autocmd BufWritePre * StripWhitespace
+
