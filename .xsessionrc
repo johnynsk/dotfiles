@@ -1,3 +1,12 @@
-exec feh --bg-fill 411460075.jpg &
-exec keynav &
+#!/bin/sh
+exec xrandr --output HDMI1 --mode 1920x1080 --pos 1920x0 --output VGA1 --mode 1920x1080 --pos 0x0 &
+#exec xscreensaver &
+# --rotate left
+exec xautolock -time 5 -locker '~/.i3/locker.sh' &
+exec setxkbmap "us,ru" ",winkeys" "grp:alt_shift_toggle,grp_led:scroll" &
 exec guake &
+exec pidgin &
+exec keynav &
+exec feh /home/johny/Pictures/02982_lacdechesery_3840x1080.jpg --bg-center &
+exec redshift -l 55:82 -t 6500:4800 &
+exec ps ax | grep "lsyncd" | grep -v "grep" || lsyncd /home/johny/.lsyncd/lsyncd.conf &
