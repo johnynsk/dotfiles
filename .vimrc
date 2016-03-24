@@ -19,6 +19,8 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'ntpeters/vim-better-whitespace'
+Plugin 'scrooloose/nerdtree'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
 
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
@@ -31,6 +33,7 @@ call vundle#end()
 " map keys
 " -----------------------------------------
 nnoremap <F4> :call ToggleLines()<CR>
+map <C-n> :NERDTreeToggle<CR>
 function ToggleLines()
     :set nonumber!
     :GitGutterSignsToggle
