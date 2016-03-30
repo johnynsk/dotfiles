@@ -1,7 +1,7 @@
 #!/bin/bash
 FILENAME=`date +%Y-%m-%d-%H-%M-%S`_scrot.png
 FILE=~/shots/$FILENAME
-DURATION=`zenity --info --title='Снимок экрана' --text='Выделите область экрана' 2>/dev/null`
+DURATION=`zenity --info --title='Снимок экрана' --text='Выделите область экрана' 2>/dev/null` || exit
 # xrectsel from https://github.com/lolilolicon/xrectsel
 SIZE=$(xrectsel)
 

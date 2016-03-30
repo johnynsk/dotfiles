@@ -28,7 +28,7 @@ fi;
 
 FILE=~/shots/$FILENAME
 
-DURATION=`zenity --entry --title='Запись gif' --text='Введите время записи (сек)' 2>/dev/null`
+DURATION=`zenity --entry --title='Запись gif' --text='Введите время записи (сек)' 2>/dev/null` || exit
 echo Recording duration $DURATION s to $FILE
 
 # xrectsel from https://github.com/lolilolicon/xrectsel
