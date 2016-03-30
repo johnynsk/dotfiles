@@ -22,6 +22,9 @@ Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'nginx.vim'
+" понять и простить
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
 
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
