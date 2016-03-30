@@ -53,6 +53,11 @@ nmap j gj
 nmap <DOWN> gj
 nmap k gk
 nmap <UP> gk
+nmap <silent> <A-Up> :wincmd k<CR>
+nmap <silent> <A-Down> :wincmd j<CR>
+nmap <silent> <A-Left> :wincmd h<CR>
+nmap <silent> <A-Right> :wincmd l<CR>
+
 
 
 filetype plugin indent on
@@ -76,6 +81,8 @@ set mouse=a
 set showtabline=4
 set completeopt=longest,menuone
 set ofu=syntaxcomplete#Complete
+:hi Search ctermbg=70
+
 
 " airline plugin
 set laststatus=2
