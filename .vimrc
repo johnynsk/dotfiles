@@ -21,6 +21,7 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'nginx.vim'
 
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
@@ -90,6 +91,8 @@ let g:airline_theme='jellybeans'
 let g:airline#extensions#tabline#enabled = 1
 
 highlight LineNr ctermfg=darkgray ctermbg=black
+
+" overlength > 120
 highlight OverLength ctermfg=red guibg=#592929
 match OverLength /\%121v.\+/
 

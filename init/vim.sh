@@ -7,7 +7,7 @@ vim +PluginInstall +qall
 
 if [[ ! -e "`eval echo ~/.vim/bundle/YouCompleteMe/third_party/ycmd/ycm_core.so`" ]]
 then
-    sudo apt-get -y install python-dev cmake
+    sudo apt-get -y install python-dev cmake clang
     pushd `pwd`
     cd ~/.vim/bundle/YouCompleteMe
     ./install.py --tern-completer --gocode-completer --clang-completer
