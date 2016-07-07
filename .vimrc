@@ -92,6 +92,7 @@ set ofu=syntaxcomplete#Complete
 set laststatus=2
 let g:airline_theme='jellybeans'
 let g:airline#extensions#tabline#enabled = 1
+let g:ctrlp_max_files = 0
 
 highlight LineNr ctermfg=darkgray ctermbg=black
 
