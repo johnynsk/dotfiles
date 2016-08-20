@@ -25,6 +25,8 @@ Plugin 'nginx.vim'
 " понять и простить
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
+" theme
+Plugin 'NLKNguyen/papercolor-theme'
 
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
@@ -84,6 +86,8 @@ set mouse=a
 set showtabline=4
 set completeopt=longest,menuone
 set ofu=syntaxcomplete#Complete
+set background=light
+colorscheme PaperColor
 :hi Search ctermbg=70
 
 
