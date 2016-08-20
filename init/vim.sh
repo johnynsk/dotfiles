@@ -10,7 +10,7 @@ mkdir -p ~/.vim/autoload/
 curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 vim +PluginInstall +qall
 
-if [[ ! -e "`eval echo ~/.vim/bundle/YouCompleteMe/third_party/ycmd/ycm_core.so`" ]]
+if [[ -e "`eval echo ~/.vim/bundle/YouCompleteMe/third_party/ycmd/ycm_core.so`" ]]
 then
     sudo apt-get -y install python-dev cmake clang
     pushd `pwd`
