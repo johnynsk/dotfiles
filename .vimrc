@@ -96,6 +96,7 @@ set laststatus=2
 let g:airline_theme='jellybeans'
 let g:airline#extensions#tabline#enabled = 1
 let g:ctrlp_max_files = 0
+let g:ctrlp_custom_ignore = 'node_modules\|.idea\|.git'
 let g:ycm_confirm_extra_conf = 0
 
 highlight LineNr ctermfg=darkgray ctermbg=black
