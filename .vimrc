@@ -16,17 +16,29 @@ Plugin 'ekalinin/Dockerfile.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'Valloric/YouCompleteMe'
+"Plugin 'Valloric/YouCompleteMe'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'nginx.vim'
+Plugin 'fatih/vim-go'
+Plugin 'isRuslan/vim-es6'
 " понять и простить
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 " theme
 Plugin 'NLKNguyen/papercolor-theme'
+"autocomplete
+Bundle 'Shougo/vimproc'
+Bundle 'Shougo/unite.vim'
+Bundle 'm2mdas/phpcomplete-extended'
+
+"raml
+Plugin 'IN3D/vim-raml'
+
+"xdebug
+"Plugin 'joonty/vdebug'
 
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
@@ -52,8 +64,6 @@ function! ToggleMouse()
 		set mouse=a
 	endif
 endfunction
-nnoremap	<F9>	gT
-nnoremap	<F10>	gt
 nmap j gj
 nmap <DOWN> gj
 nmap k gk
@@ -108,4 +118,7 @@ match OverLength /\%121v.\+/
 filetype plugin on
 
 autocmd BufWritePre * StripWhitespace
+
+nnoremap	<F9>	gT
+nnoremap	<F10>	gt
 
