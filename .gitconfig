@@ -1,7 +1,7 @@
 [alias]
-    sh = !/usr/local/bin/git-sh
-    edit = !/usr/lib/git-core//git-edit
-    forest = !/usr/lib/git-core//git-forest
+	sh = !/usr/local/bin/git-sh
+	edit = !/usr/lib/git-core//git-edit
+	forest = !/usr/lib/git-core//git-forest
     st = status
     pl = pull --rebase origin
     fo = fetch origin
@@ -14,7 +14,7 @@
 
 [user]
     name = Evgeniy Vasilev
-    email = e.vasilev@office.ngs.ru
+    email = evasilev@odin.com
 
 [core]
     excludesfile = ~/.config/git/gitignore
