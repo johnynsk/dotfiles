@@ -3,7 +3,6 @@ sudo apt-get -y install \
     byzanz \
     guake \
     moc \
-    php5-cli \
     nginx-extras \
     vim-nox \
     memcached \
@@ -13,5 +12,4 @@ sudo apt-get -y install \
     make \
     libx11-dev \
     autoconf \
-    php5-memcached
 
