@@ -1,5 +1,5 @@
 #!/bin/sh
-exec xrandr --output HDMI1 --mode 1920x1080 --pos 1920x0 --output VGA1 --mode 1920x1080 --pos 0x0 &
+exec xrandr --output VGA-1 --mode 1920x1080 --pos 1920x0 --output VGA-2 --mode 1920x1080 --pos 0x0 &
 #exec xscreensaver &
 # --rotate left
 exec xautolock -time 5 -locker '~/.i3/locker.sh' &
@@ -7,6 +7,7 @@ exec setxkbmap "us,ru" ",winkeys" "grp:alt_shift_toggle,grp_led:scroll" &
 exec guake &
 exec pidgin &
 exec keynav &
-exec feh /home/johny/Pictures/02982_lacdechesery_3840x1080.jpg --bg-center &
+exec feh /home/user/outer-space-wallpaper-23.jpg --bg-center &
+
 exec redshift -l 55:82 -t 6500:4800 &
-exec ps ax | grep "lsyncd" | grep -v "grep" || lsyncd /home/johny/.lsyncd/lsyncd.conf &
+exec ps ax | grep "lsyncd" | grep -v "grep" || lsyncd /home/user/.lsyncd/lsyncd.conf &
