@@ -3,3 +3,4 @@
 framework/
 .config/jirabranch
 .idea
+.vscode
