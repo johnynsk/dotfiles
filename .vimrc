@@ -16,7 +16,7 @@ Plugin 'ekalinin/Dockerfile.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'ctrlpvim/ctrlp.vim'
-"Plugin 'Valloric/YouCompleteMe'
+Plugin 'Valloric/YouCompleteMe'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'scrooloose/nerdtree'
@@ -30,9 +30,9 @@ Plugin 'plasticboy/vim-markdown'
 " theme
 Plugin 'NLKNguyen/papercolor-theme'
 "autocomplete
-Bundle 'Shougo/vimproc'
-Bundle 'Shougo/unite.vim'
-Bundle 'm2mdas/phpcomplete-extended'
+"Bundle 'Shougo/vimproc'
+"Bundle 'Shougo/unite.vim'
+" Bundle 'm2mdas/phpcomplete-extended'
 
 "raml
 Plugin 'IN3D/vim-raml'
