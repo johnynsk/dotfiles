@@ -14,7 +14,7 @@
 
 [user]
     name = Evgeniy Vasilev
-    email = evasilev@odin.com
+    email = github+dev@johnynsk.ru
 
 [core]
     excludesfile = ~/.config/git/gitignore

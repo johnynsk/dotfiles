@@ -8,11 +8,19 @@ filetype off
 " -----------------------------------------
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
+Plugin 'VundleVim/Vundle.vim' " need to keep vundle directory
 
-Bundle 'tobyS/pdv'
-Plugin 'gmarik/Vundle.vim'
-Plugin 'ultisnips'
+" Syntax support
 Plugin 'ekalinin/Dockerfile.vim'
+Plugin 'nginx.vim'
+Plugin 'fatih/vim-go'
+Plugin 'isRuslan/vim-es6'
+Plugin 'IN3D/vim-raml'
+Plugin 'plasticboy/vim-markdown'
+
+Plugin 'vim-syntastic/syntastic'
+
+" Interface extenders
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'ctrlpvim/ctrlp.vim'
@@ -21,22 +29,22 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
-Plugin 'nginx.vim'
-Plugin 'fatih/vim-go'
-Plugin 'isRuslan/vim-es6'
+Plugin 'tpope/vim-fugitive' "shows git branch
+
+" Interface themes
+Plugin 'NLKNguyen/papercolor-theme'
+
 " понять и простить
 Plugin 'godlygeek/tabular'
-Plugin 'plasticboy/vim-markdown'
-" theme
-Plugin 'NLKNguyen/papercolor-theme'
+
+" became useless plugins
+" Bundle 'tobyS/pdv' " php documentor vim
+" Plugin 'ultisnips'
 "autocomplete
-"Bundle 'Shougo/vimproc'
-"Bundle 'Shougo/unite.vim'
+"Bundle 'vim-scripts/proc.vim'
+" Bundle 'Shougo/vimproc'
+" Bundle 'Shougo/unite.vim'
 " Bundle 'm2mdas/phpcomplete-extended'
-
-"raml
-Plugin 'IN3D/vim-raml'
-
 "xdebug
 "Plugin 'joonty/vdebug'
 
@@ -49,55 +57,74 @@ call vundle#end()
 " -----------------------------------------
 " map keys
 " -----------------------------------------
-nnoremap <F4> :call ToggleLines()<CR>
+
+" toggle nerd tree
 map <C-n> :NERDTreeToggle<CR>
+
+" toggle line numbers and other information
 function ToggleLines()
     :set nonumber!
     :GitGutterSignsToggle
 endfunction
+nnoremap <F4> :call ToggleLines()<CR>
+set number
 
+" mouse control toggle define
 nnoremap <F3> :call ToggleMouse()<CR>
 function! ToggleMouse()
-	if &mouse == 'a'
-		set mouse=
-	else
-		set mouse=a
-	endif
+    if &mouse == 'a'
+        set mouse=
+    else
+        set mouse=a
+    endif
 endfunction
+set mouse=a
+
+" working with tabs: previous and next
+nnoremap <F9> gT
+nnoremap <F10> gt
+
+" paste mode toggle
+set pastetoggle=<F8>
+
+" mapping for human-moving between lines
 nmap j gj
 nmap <DOWN> gj
 nmap k gk
 nmap <UP> gk
-nmap <silent> <A-Up> :wincmd k<CR>
-nmap <silent> <A-Down> :wincmd j<CR>
-nmap <silent> <A-Left> :wincmd h<CR>
-nmap <silent> <A-Right> :wincmd l<CR>
-
-
-
-filetype plugin indent on
 
 " -----------------------------------------
 " options
 " -----------------------------------------
-set hls
 set is
-set expandtab
 set cul
-set autoindent
-set number
 syntax on
-set pastetoggle=<F8>
+
+
+" tabs settings
+set expandtab
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
-set ignorecase
-set mouse=a
 set showtabline=4
+set ignorecase
+set autoindent
+autocmd BufWritePre * StripWhitespace
+
+" need to know how it works
 set completeopt=longest,menuone
 set ofu=syntaxcomplete#Complete
+
+" --------------------------------
+"  Interface
+" --------------------------------
+" theme settings with line numbers
 set background=light
 colorscheme PaperColor
+highlight LineNr ctermfg=darkgray ctermbg=black
+
+" search highlights
+set hls " highlights search results
 :hi Search ctermbg=70
 
 
@@ -105,20 +132,14 @@ colorscheme PaperColor
 set laststatus=2
 let g:airline_theme='jellybeans'
 let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#branch#enabled = 1
 let g:ctrlp_max_files = 0
 let g:ctrlp_custom_ignore = 'node_modules\|.idea\|.git'
 let g:ycm_confirm_extra_conf = 0
-
-highlight LineNr ctermfg=darkgray ctermbg=black
 
 " overlength > 120
 highlight OverLength ctermfg=red guibg=#592929
 match OverLength /\%121v.\+/
 
-filetype plugin on
-
-autocmd BufWritePre * StripWhitespace
-
-nnoremap	<F9>	gT
-nnoremap	<F10>	gt
+filetype plugin indent on
 

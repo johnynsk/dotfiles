@@ -1,5 +1,7 @@
 #!/bin/bash
 
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
 if [[ -z "`cat ~/.bashrc | grep EDITOR`" ]]
 then
     echo "export EDITOR=vim" >> ~/.bashrc
@@ -8,7 +10,7 @@ fi
 
 mkdir -p ~/.vim/autoload/
 curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
-vim +PluginInstall +qall
+vim +PluginInstall +PluginClean! +qall
 
 if [[ -e "`eval echo ~/.vim/bundle/YouCompleteMe/third_party/ycmd/ycm_core.so`" ]]
 then
