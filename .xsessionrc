@@ -10,4 +10,4 @@ exec keynav &
 exec feh /home/user/outer-space-wallpaper-23.jpg --bg-center &
 
 exec redshift -l 55:82 -t 6500:4800 &
-exec ps ax | grep "lsyncd" | grep -v "grep" || lsyncd /home/user/.lsyncd/lsyncd.conf &
+exec ps ax | grep "lsyncd" | grep -v "grep\|tail" || lsyncd /home/user/.lsyncd/lsyncd.conf &

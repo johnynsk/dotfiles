@@ -4,3 +4,12 @@ framework/
 .config/jirabranch
 .idea
 .vscode
+.vimrc
+settings.xml
+cscope.files
+.gitignore
+Dockerfile
+docker-compose.yml
+buildSystem/*
+npm-debug.log
+

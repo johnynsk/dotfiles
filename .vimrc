@@ -1,5 +1,6 @@
 execute pathogen#infect()
 
+"Helptags vim-fugitive/doc
 set nocompatible
 filetype off
 
@@ -17,7 +18,8 @@ Plugin 'fatih/vim-go'
 Plugin 'isRuslan/vim-es6'
 Plugin 'IN3D/vim-raml'
 Plugin 'plasticboy/vim-markdown'
-
+Plugin 'othree/xml.vim' "helps editing xml
+" awesome syntax checking plugin
 Plugin 'vim-syntastic/syntastic'
 
 " Interface extenders
@@ -45,6 +47,7 @@ Plugin 'godlygeek/tabular'
 " Bundle 'Shougo/vimproc'
 " Bundle 'Shougo/unite.vim'
 " Bundle 'm2mdas/phpcomplete-extended'
+
 "xdebug
 "Plugin 'joonty/vdebug'
 
@@ -127,6 +130,9 @@ highlight LineNr ctermfg=darkgray ctermbg=black
 set hls " highlights search results
 :hi Search ctermbg=70
 
+set exrc
+set secure
+
 
 " airline plugin
 set laststatus=2
@@ -135,7 +141,8 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#branch#enabled = 1
 let g:ctrlp_max_files = 0
 let g:ctrlp_custom_ignore = 'node_modules\|.idea\|.git'
-let g:ycm_confirm_extra_conf = 0
+"let g:ycm_confirm_extra_conf = 0
+let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 
 " overlength > 120
 highlight OverLength ctermfg=red guibg=#592929
@@ -143,3 +150,7 @@ match OverLength /\%121v.\+/
 
 filetype plugin indent on
 
+nnoremap	<F9>	gT
+nnoremap	<F10>	gt
+
+let path=",./,"
