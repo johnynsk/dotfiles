@@ -71,6 +71,7 @@ function ToggleLines()
 endfunction
 nnoremap <F4> :call ToggleLines()<CR>
 set number
+set relativenumber
 
 " mouse control toggle define
 nnoremap <F3> :call ToggleMouse()<CR>
@@ -141,6 +142,11 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#branch#enabled = 1
 let g:ctrlp_max_files = 0
 let g:ctrlp_custom_ignore = 'node_modules\|.idea\|.git'
+let g:ctrlp_working_path_mode = 0
+let g:ctrlp_prompt_mappings = {
+    \ 'AcceptSelection("e")': ['<c-t>'],
+    \ 'AcceptSelection("t")': ['<cr>', '<2-LeftMouse>'],
+    \ }
 "let g:ycm_confirm_extra_conf = 0
 let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 
