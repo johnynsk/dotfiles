@@ -1,5 +1,5 @@
 #!/bin/sh
-exec xrandr --output VGA-1 --mode 1920x1080 --pos 1920x0 --output VGA-2 --mode 1920x1080 --pos 0x0 &
+exec xrandr --output VGA-2 --mode 1920x1080 --pos 1920x0 --output VGA-1 --mode 1920x1080 --pos 0x0 &
 #exec xscreensaver &
 # --rotate left
 exec xautolock -time 5 -locker '~/.i3/locker.sh' &
