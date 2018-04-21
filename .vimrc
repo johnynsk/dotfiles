@@ -33,11 +33,25 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'tpope/vim-fugitive' "shows git branch
 
+" additional code information
+Plugin 'majutsushi/tagbar'
+
 " Interface themes
 Plugin 'NLKNguyen/papercolor-theme'
 
+" pretty commenting
+Plugin 'scrooloose/nerdcommenter'
+
+" vim notebook codi
+Plugin 'metakirby5/codi.vim'
+
 " понять и простить
 Plugin 'godlygeek/tabular'
+
+" Sublime minimap
+Plugin 'severin-lemaignan/vim-minimap'
+
+Plugin 'grep.vim'
 
 " became useless plugins
 " Bundle 'tobyS/pdv' " php documentor vim
@@ -63,6 +77,8 @@ call vundle#end()
 
 " toggle nerd tree
 map <C-n> :NERDTreeToggle<CR>
+" let NERDTreeMapOpenInTab='<ENTER>'
+
 
 " toggle line numbers and other information
 function ToggleLines()
@@ -71,7 +87,7 @@ function ToggleLines()
 endfunction
 nnoremap <F4> :call ToggleLines()<CR>
 set number
-set relativenumber
+"set relativenumber
 
 " mouse control toggle define
 nnoremap <F3> :call ToggleMouse()<CR>
@@ -97,6 +113,9 @@ nmap <DOWN> gj
 nmap k gk
 nmap <UP> gk
 
+" tagbar integration
+nmap <F7> :TagbarToggle<CR>
+
 " -----------------------------------------
 " options
 " -----------------------------------------
@@ -113,7 +132,7 @@ set shiftwidth=4
 set showtabline=4
 set ignorecase
 set autoindent
-autocmd BufWritePre * StripWhitespace
+"autocmd BufWritePre * StripWhitespace
 
 " need to know how it works
 set completeopt=longest,menuone
@@ -154,9 +173,14 @@ let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/
 highlight OverLength ctermfg=red guibg=#592929
 match OverLength /\%121v.\+/
 
+" clipboard maps
+map <C-V> "+p
+map <C-C> "+y
+
 filetype plugin indent on
 
 nnoremap	<F9>	gT
 nnoremap	<F10>	gt
 
 let path=",./,"
+
