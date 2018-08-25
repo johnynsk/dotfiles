@@ -18,9 +18,32 @@ http://air.radiorecord.ru:8102/chil_128
 http://air.radiorecord.ru:8102/club_320
 #EXTINF:-1,Record club (320)
 http://air.radiorecord.ru:8102/club_128
+#EXTINF:-1,Record NeuroFunk (320)
+http://air.radiorecord.ru:805/neurofunk_320
+#EXTINF:-1,Record NeuroFunk (128)
+http://air.radiorecord.ru:805/neurofunk_128
+#EXTINF:-1,Record DrumHits (320)
+http://air.radiorecord.ru:805/drumhits_320
+#EXTINF:-1,Record DrumHits (128)
+http://air.radiorecord.ru:805/drumhits_128
+#EXTINF:-1,Record LiqudFunk (320)
+http://air.radiorecord.ru:805/liquidfunk_320
+#EXTINF:-1,Record LiqudFunk (320)
+http://air.radiorecord.ru:805/liquidfunk_128
+#EXTINF:-1,Record Jungle (320)
+http://air.radiorecord.ru:805/jungle_320
+#EXTINF:-1,Record Jungle (128)
+http://air.radiorecord.ru:805/jungle_128
+#EXTINF:-1,Record Midtempo (320)
+http://air.radiorecord.ru:805/mt_320
+#EXTINF:-1,Record Midtempo (128)
+http://air.radiorecord.ru:805/mt_128
+
 #EXTINF:-1,Ретро FM (256)
 http://retroserver.streamr.ru:8043/retro256.mp3
 #EXTINF:-1,Радио Дача (64)
 http://stream.radiodacha.ru:9000/14_dacha_56?type=.flv&UID=2FA241E2E598CC44FF7A07C58D9B2DC5
+#EXTINF:-1,Вести FM(64)
+http://icecast.vgtrk.cdnvideo.ru/vestifm_aac_64kbps
 #EXTINF:-1,Городская волна (128)
 http://online.gorvolna.ru:8000/gorvolna
