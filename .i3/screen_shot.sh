@@ -1,11 +1,11 @@
 #!/bin/bash
 FILENAME=`date +%Y-%m-%d-%H-%M-%S`_scrot.png
-FILE=~/shots/$FILENAME
-DURATION=`zenity --info --title='Снимок экрана' --text='Выделите область экрана' 2>/dev/null` || exit
+FILE=/media/sf_shar/shots/$FILENAME
+DELAY=`zenity --entry --title='Снимок экрана' --text='Введите время задержки (сек)' --entry-text='1.5' 2>/dev/null` || exit
 # xrectsel from https://github.com/lolilolicon/xrectsel
 SIZE=$(xrectsel)
 
-sleep 1.5
+sleep $DELAY
 scrot $FILE
 convert $FILE -crop $SIZE $FILE
 
@@ -13,9 +13,9 @@ if [ "$1" = "hosting" ]
 then
     scp $FILE johnynsk.ru:/var/www/johnynsk.ru/fastimg.johnynsk.ru/www/work/
     REMOTEFILE='http://fastimg.johnynsk.ru/work/'$FILENAME
-    echo $REMOTEFILE | xsel -i -b
+    echo -n $REMOTEFILE | xsel -i -b
 else
-    echo $FILE | xsel -i -b
+    echo -n $FILE | xsel -i -b
 fi
 
 

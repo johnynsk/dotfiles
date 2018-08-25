@@ -5,30 +5,47 @@ DELAY=3
 
 # Sound notification to let one know when recording is about to start (and ends)
 beep() {
-    paplay /usr/share/sounds/KDE-Im-Irc-Event.ogg &
+#    paplay /usr/share/sounds/KDE-Im-Irc-Event.ogg &
+    paplay /usr/share/sounds/freedesktop/stereo/camera-shutter.oga &
 }
 
 FILENAME=`date +%Y-%m-%d_%H-%M-%S`_byanz
 REMOTE=
-
-if [ "$1" = "flv" ]
+MODE="gif"
+if [ "$1" = "webm" ]
 then
-    FILENAME=$FILENAME.flv
+    MODE="webm"
+    FILENAME=$FILENAME.webm
     if [ "$2" = "hosting" ]
     then
+        MODE="$MODE (hosting)"
         REMOTE=1
     fi
 else
-    FILENAME=$FILENAME.gif
-    if [ "$1" = "hosting" ]
+    if [ "$1" = "flv" ]
     then
-        REMOTE=1
-    fi
+        MODE="flv"
+        FILENAME=$FILENAME.flv
+        if [ "$2" = "hosting" ]
+        then
+            MODE="$MODE (hosting)"
+            REMOTE=1
+        fi
+
+    else
+        FILENAME=$FILENAME.gif
+        if [ "$1" = "hosting" ]
+        then
+            MODE="$MODE (hosting)"
+            REMOTE=1
+        fi
+    fi;
 fi;
 
-FILE=~/shots/$FILENAME
-
-DURATION=`zenity --entry --title='Запись gif' --text='Введите время записи (сек)' 2>/dev/null` || exit
+FILE=/media/sf_shar/shots/$FILENAME
+#FILE=/home/user/Desktop/$FILENAME
+DELAY=`zenity --entry --title='Снимок экрана' --text='Введите время задержки (сек)' --entry-text='1.5' 2>/dev/null` || exit
+DURATION=`zenity --entry --title="Запись $MODE" --text='Введите время записи (сек)' 2>/dev/null` || exit
 echo Recording duration $DURATION s to $FILE
 
 # xrectsel from https://github.com/lolilolicon/xrectsel
@@ -45,10 +62,10 @@ beep
 
 if [ -n "$REMOTE" ]
 then
-    scp $FILE johnynsk.ru:/var/www/johnynsk.ru/fastimg.johnynsk.ru/www/work/
-    REMOTEFILE='http://fastimg.johnynsk.ru/work/'$FILENAME
-    echo $REMOTEFILE | xsel -i -b
+    scp $FILE dev0:/data/projects/www.johnynsk.ru/www/records/
+    REMOTEFILE='http://johnynsk.ru/records/'$FILENAME
+    echo -n $REMOTEFILE | xsel -i -b
 else
-    echo $FILE | xsel -i -b
+    echo -n $FILE | xsel -i -b
 fi
 
