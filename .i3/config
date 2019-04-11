@@ -10,7 +10,7 @@
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
 set $mod Mod4
-
+set $alt Mod1
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below. ISO 10646 = Unicode
 font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
@@ -29,13 +29,15 @@ floating_modifier $mod
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
 
+bindsym $alt+Tab workspace back_and_forth
+
 # kill focused window
 bindsym $mod+Shift+Cyrillic_shorti kill
 bindsym $mod+Shift+Q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+Cyrillic_ve exec dmenu_run
-bindsym $mod+D exec dmenu_run
+bindsym $mod+Cyrillic_ve exec "rofi -combi-modi run,drun,window -show combi -modi combi"
+bindsym $mod+D exec "rofi -combi-modi run,drun,window -show combi -modi combi"
 
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
@@ -43,20 +45,24 @@ bindsym $mod+D exec dmenu_run
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # Lock screen
-bindsym $mod+Mod1+l exec ~/.i3/locker.sh
-bindsym $mod+Mod1+Cyrillic_de exec ~/.i3/locker.sh
+#bindsym $mod+Mod1+l exec ~/.i3/locker.sh
+#bindsym $mod+Mod1+Cyrillic_de exec ~/.i3/locker.sh
+bindsym $mod+l exec xautolock -locknow &
+bindsym $mod+Cyrillic_de exec xautolock -locknow &
+#bindsym $mod+l exec ~/.i3/locker.sh
+#bindsym $mod+Cyrillic_de exec ~/.i3/locker.sh
+
 #bindsym $mod
 
 # change focus
-bindsym $mod+Cyrillic_o focus left
-bindsym $mod+Cyrillic_el focus down
-bindsym $mod+Cyrillic_de focus up
-bindsym $mod+Cyrillic_zhe focus right
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+semicolon focus right
-
+#bindsym $mod+Cyrillic_o focus left
+#bindsym $mod+Cyrillic_el focus down
+#bindsym $mod+Cyrillic_de focus up
+#bindsym $mod+Cyrillic_zhe focus right
+#bindsym $mod+j focus left
+#bindsym $mod+k focus down
+#bindsym $mod+l focus up
+#bindsym $mod+semicolon focus right
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
@@ -109,8 +115,9 @@ bindsym $mod+Shift+Print exec ~/.i3/screen_record.sh hosting
 bindsym $mod+Ctrl+Print exec ~/.i3/screen_record.sh webm
 bindsym $mod+Shift+Ctrl+Print exec ~/.i3/screen_record.sh webm hosting
 
-bindsym $mod+Scroll_Lock exec ~/.i3/current_task.sh
-
+bindsym $mod+Shift+Scroll_Lock exec "timew summary | zenity --text-info --font='Monospace Regular' --width=800 --height=600"
+bindsym $mod+Scroll_Lock exec "TAG=`zenity --entry --text=\\"\`timew summary\`\nEnter your next task tag:\\" --title=\\"TimeWarrior start task\\"` && timew start $TAG"
+bindsym $mod+Pause exec "LANG=C pactl list sinks | grep 'Sink #1' -A10 | grep -q Mute:.no && pactl set-sink-mute 1 1 || pactl set-sink-mute 1 0"
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -131,28 +138,50 @@ bindsym $mod+a focus parent
 # workspaces
 
 # switch to workspace
+bindsym $mod+0 workspace 0:main
 bindsym $mod+1 workspace 1:web
 bindsym $mod+2 workspace 2:ide
 bindsym $mod+3 workspace 3
 bindsym $mod+4 workspace 4
-bindsym $mod+5 workspace 5:deploy
+bindsym $mod+5 workspace 5
 bindsym $mod+6 workspace 6
 bindsym $mod+7 workspace 7
 bindsym $mod+8 workspace 8
 bindsym $mod+9 workspace 9
-bindsym $mod+0 workspace 10:jabber
+bindsym $mod+KP_0 workspace 0:main
+bindsym $mod+KP_1 workspace 1:web
+bindsym $mod+KP_2 workspace 2:ide
+bindsym $mod+KP_3 workspace 3
+bindsym $mod+KP_4 workspace 4
+bindsym $mod+KP_5 workspace 5
+bindsym $mod+KP_6 workspace 6
+bindsym $mod+KP_7 workspace 7
+bindsym $mod+KP_8 workspace 8
+bindsym $mod+KP_9 workspace 9
+
 
 # move focused container to workspace
+bindsym $mod+Shift+0 move container to workspace 0:main
 bindsym $mod+Shift+1 move container to workspace 1:web
 bindsym $mod+Shift+2 move container to workspace 2:ide
 bindsym $mod+Shift+3 move container to workspace 3
 bindsym $mod+Shift+4 move container to workspace 4
-bindsym $mod+Shift+5 move container to workspace 5:deploy
+bindsym $mod+Shift+5 move container to workspace 5
 bindsym $mod+Shift+6 move container to workspace 6
 bindsym $mod+Shift+7 move container to workspace 7
 bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace 9
-bindsym $mod+Shift+0 move container to workspace 10:jabber
+bindsym $mod+Shift+KP_0 move container to workspace 0:main
+bindsym $mod+Shift+KP_1 move container to workspace 1:web
+bindsym $mod+Shift+KP_2 move container to workspace 2:ide
+bindsym $mod+Shift+KP_3 move container to workspace 3
+bindsym $mod+Shift+KP_4 move container to workspace 4
+bindsym $mod+Shift+KP_5 move container to workspace 5
+bindsym $mod+Shift+KP_6 move container to workspace 6
+bindsym $mod+Shift+KP_7 move container to workspace 7
+bindsym $mod+Shift+KP_8 move container to workspace 8
+bindsym $mod+Shift+KP_9 move container to workspace 9
+
 
 # reload the configuration file
 bindsym $mod+Shift+Cyrillic_es reload
@@ -163,6 +192,8 @@ bindsym $mod+Shift+Cyrillic_ka restart
 bindsym $mod+Shift+r restart
 
 for_window [instance="^guake"] floating enable
+for_window [instance="^galculator"] floating enable
+
 
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+Cyrillic_u exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
@@ -224,12 +255,15 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        status_command php ~/.i3/i3-phpbar/bar.php 2>>/tmp/i3-phpbar.log
-        position bottom
+        status_command nodejs ~/projects/environment/i3-nodebar/bar.js
+        position top
 
         colors {
-                background #222250
+#                background #222250
+                background #225522
+#                statusline #dfd5c8
                 statusline #dfd5c8
+
 
                 inactive_workspace #dfd5c8 #222222
         }
