@@ -1,12 +1,12 @@
 #!/bin/bash
 FILENAME=`date +%Y-%m-%d-%H-%M-%S`_scrot.png
-FILE=/media/sf_shar/shots/$FILENAME
+FILE=~/shots/$FILENAME
 DELAY=`zenity --entry --title='Снимок экрана' --text='Введите время задержки (сек)' --entry-text='1.5' 2>/dev/null` || exit
 # xrectsel from https://github.com/lolilolicon/xrectsel
 SIZE=$(xrectsel)
 
 sleep $DELAY
-scrot $FILE
+scrot -z $FILE
 convert $FILE -crop $SIZE $FILE
 
 if [ "$1" = "hosting" ]

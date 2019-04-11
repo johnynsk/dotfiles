@@ -42,7 +42,7 @@ else
     fi;
 fi;
 
-FILE=/media/sf_shar/shots/$FILENAME
+FILE=~/shots/$FILENAME
 #FILE=/home/user/Desktop/$FILENAME
 DELAY=`zenity --entry --title='Снимок экрана' --text='Введите время задержки (сек)' --entry-text='1.5' 2>/dev/null` || exit
 DURATION=`zenity --entry --title="Запись $MODE" --text='Введите время записи (сек)' 2>/dev/null` || exit
