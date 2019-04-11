@@ -1,2 +1,2 @@
 #!/bin/bash
-sudo apt-get -y install i3 imagemagick feh
+sudo apt-get -y install i3 imagemagick feh redshift pasystray
