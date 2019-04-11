@@ -1,13 +1,18 @@
 [alias]
-	sh = !/usr/local/bin/git-sh
-	edit = !/usr/lib/git-core//git-edit
-	forest = !/usr/lib/git-core//git-forest
-    st = status
-    pl = pull --rebase origin
-    fo = fetch origin
-    ph = push origin
+#	sh = !/usr/local/bin/git-sh
+	l = log --oneline
+    edit = !/usr/lib/git-core//git-edit
+    fr = log --oneline --graph
+    a = add
+    s = status --short
+    st = status --short
+    d = diff
+    dw = diff -w
+    dc = diff --cached
+    dcw = diff -w --cached
+    pr = pull --rebase origin
+    po = push origin
     co = checkout
-    ro = rebase origin/master
 
 [color]
     ui = auto
@@ -18,3 +23,4 @@
 
 [core]
     excludesfile = ~/.config/git/gitignore
+

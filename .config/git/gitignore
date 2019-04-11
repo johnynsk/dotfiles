@@ -10,6 +10,10 @@ cscope.files
 .gitignore
 Dockerfile
 docker-compose.yml
-buildSystem/*
+buildSystem/
+node_modules/
+target/
+.idea/
+vendors/
 npm-debug.log
 
