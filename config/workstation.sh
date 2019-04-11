@@ -5,6 +5,8 @@ LINKPATHS=(
     ".vim"
     ".vimrc"
     ".i3"
+    ".zsh"
+    ".zshrc"
     ".config/git"
     ".config/jirabranch"
     ".keynavrc"
@@ -17,6 +19,9 @@ EXECPATHS=(
     "vim.sh"
     "screen-record.sh"
     "i3.sh"
+    "zsh.sh"
+    "idea.sh"
+    "docker.sh"
     "keynav.sh"
 )
 

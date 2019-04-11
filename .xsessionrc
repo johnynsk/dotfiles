@@ -1,13 +1,19 @@
 #!/bin/sh
-exec xrandr --output VGA-2 --mode 1920x1080 --pos 1920x0 --output VGA-1 --mode 1920x1080 --pos 0x0 &
+#exec xrandr --output VGA-1 --mode 1920x1080 --pos 0x0 --output DVI-I-1 --mode 1920x1080 --pos 1920x0 & 
+exec xrandr --output VGA-0 --mode 1920x1080 --pos 0x0 --output DVI-I-1 --mode 1920x1080 --pos 1920x0 & 
+exec compton &
 #exec xscreensaver &
 # --rotate left
-exec xautolock -time 5 -locker '~/.i3/locker.sh' &
+exec xautolock -detectsleep -time 3 -locker '~/.i3/locker.sh' &
 exec setxkbmap "us,ru" ",winkeys" "grp:alt_shift_toggle,grp_led:scroll" &
 exec guake &
+exec evolution &
 exec pidgin &
 exec keynav &
-exec feh /home/user/outer-space-wallpaper-23.jpg --bg-center &
-
-exec redshift -l 55:82 -t 6500:4800 &
-exec ps ax | grep "lsyncd" | grep -v "grep\|tail" || lsyncd /home/user/.lsyncd/lsyncd.conf &
+#exec feh /home/user/outer-space-wallpaper-23.jpg --bg-center &
+exec feh /home/user/background.jpeg --bg-center &
+#exec pulseaudio > /dev/null &
+exec pasystray &
+exec pgrep redshift || redshift -l 55:82 -t 5600:3900 -b 1:0.6 &
+exec pgrep lsyncd || lsyncd /home/user/.lsyncd/lsyncd.conf &
+exec /opt/dropbox-filesystem-fix/dropbox_start.py & 
