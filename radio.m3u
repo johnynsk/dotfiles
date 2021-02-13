@@ -47,3 +47,7 @@ http://stream.radiodacha.ru:9000/14_dacha_56?type=.flv&UID=2FA241E2E598CC44FF7A0
 http://icecast.vgtrk.cdnvideo.ru/vestifm_aac_64kbps
 #EXTINF:-1,Городская волна (128)
 http://online.gorvolna.ru:8000/gorvolna
+#EXTINF:-1,Авторадио
+http://x.instreamatic.com/web/346.smart?type=audio
+#EXTINF:-1,Вести FM
+http://icecast.vgtrk.cdnvideo.ru/vestifm_aac_64kbps
